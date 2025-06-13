@@ -13,8 +13,11 @@ def save_account_data(platform, data):
 
 def lookup_instagram(username):
     print("[*] Recherche Instagram en cours...")
-    url = f"https://www.instagram.com/{username}/?__a=1&__d=dis"
-    headers = {"User-Agent": "Mozilla/5.0"}
+    url = f"https://www.instagram.com/api/v1/users/web_profile_info/?username={username}"
+    headers = {
+        "User-Agent": "Mozilla/5.0",
+        "X-IG-App-ID": "936619743392459"  # parfois nécessaire pour simuler l'app
+    }
 
     try:
         res = requests.get(url, headers=headers)
