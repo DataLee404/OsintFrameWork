@@ -3,4 +3,4 @@ colorama
 termcolor
 pyfiglet
 rich
-
+beautifulsoup4
